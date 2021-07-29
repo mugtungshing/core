@@ -59,14 +59,26 @@
 export interface IDict {
   /**
    * 移动端音游朝向
-   * @example ['东', '东南', '南', '西南', '西', '西北', '北', '东北']
-   * @example ['头朝下']
+   * @example
+   * ```json
+   * ["东", "东南", "南", "西南", "西", "西北", "北", "东北"]
+   * ```
+   * @example
+   * ```json
+   * ["头朝下"]
+   * ```
    */
   directions: string[]
   /**
    * 街机音游黄金位
-   * @example ['1P', '2P']
-   * @example ['维修位']
+   * @example
+   * ```json
+   * ["1P", "2P"]
+   * ```
+   * @example
+   * ```json
+   * ["维修位"]
+   * ```
    */
   slots: string[]
   /**
@@ -104,7 +116,10 @@ export interface IDict {
   activities: Array<{
     /**
      * 动作。
-     * @example "收歌"
+     * @example
+     * ```json
+     * "收歌"
+     * ```
      */
     action: string
     /**
@@ -125,10 +140,10 @@ export interface IDict {
      * @example
      * ```json
      * [
-     *   '快要收歌的时候会来一通无关紧要的电话。',
-     *   '会在最后关头卡帧掉 note。',
-     *   '延迟漂移个个 Good，曲曲延迟各不同。',
-     *   '看见这个 note 了吗？你 接 不 住。'
+     *   "快要收歌的时候会来一通无关紧要的电话。",
+     *   "会在最后关头卡帧掉 note。",
+     *   "延迟漂移个个 Good，曲曲延迟各不同。",
+     *   "看见这个 note 了吗？你 接 不 住。"
      * ]
      * ```
      */

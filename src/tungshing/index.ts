@@ -19,20 +19,32 @@ interface FixedLengthArray<T extends any, L extends number> extends Array<T> {
 export interface ITungshing {
   /**
    * 移动端音游朝向
-   * @example "东"
-   * @example "头朝下"
+   * @example
+   * ```ts
+   * "东"
+   * ```
+   * @example
+   * ```ts
+   * "头朝下"
+   * ```
    */
   direction: string
   /**
    * 街机音游黄金位
-   * @example "P1"
-   * @example "维修位"
+   * @example
+   * ```ts
+   * "P1"
+   * ```
+   * @example
+   * ```ts
+   * "维修位"
+   * ```
    */
   slot: string
   /**
    * 今日运势
    * @example
-   * ```json
+   * ```ts
    * [
    *   {
    *     action: "收歌",
@@ -48,7 +60,10 @@ export interface ITungshing {
   activity: FixedLengthArray<{ action: string, reason: string }, 2>
   /**
    * 今日音游
-   * @example "maimai"
+   * @example
+   * ```ts
+   * "maimai"
+   * ```
    */
   daily: string
 }
