@@ -7,7 +7,7 @@
 
 「音游狗老黄历」生成器核心。
 
-[阅读文档 ↗](https://mugtungshing-core.netlify.app/)
+[阅读文档 ↗](https://mugtungshing-core.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/686cf4f9-a457-4c56-9b82-0a1f78946133/deploy-status)](https://app.netlify.com/sites/mugtungshing-core/deploys)
 
 ## 上手
 
