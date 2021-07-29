@@ -11,7 +11,9 @@
   "repository": "https://github.com/mugtungshing/core.git",
   "author": "mochaaP <git@mochaa.ws>",
   "license": "MIT",
-  "publishConfig": {"access": "public"},
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "mug",
     "tungshing",
@@ -34,12 +36,12 @@
     "eslint-plugin-tsdoc": "^0.2.14",
     "eslint-plugin-unicorn": "^34.0.1",
     "husky": "^4.2.5",
+    "jest": "^27.0.6",
     "lint-staged": "^10.1.7",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "seedrandom": "^3.0.5",
     "ts-jest": "^27.0.4",
-    "jest": "^27.0.6",
     "typedoc": "^0.21.4",
     "typescript": "^4.3.5"
   },
@@ -93,9 +95,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": ["lint-staged"],
+      "pre-commit": [
+        "lint-staged"
+      ],
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   },
   "commitlint": {
     "extends": [
