@@ -98,6 +98,19 @@ test('时区判断正常', () => {
     } as ITungshing)
 })
 
+test('能够抽取幸运小朋友', () => {
+  expect(function () {
+    const x = new Tungshing(
+      '0.22714745301030104',
+      new Date(1_627_564_586_994),
+      undefined,
+      dict
+    )
+    return x.activity[0].action === x.activity[1].action
+  }())
+    .toBe(true)
+})
+
 test('种子小于 5 位字符时报错', () => {
   expect(Tungshing).toThrow()
   expect(() => { return new Tungshing('') }).toThrow()
