@@ -4,6 +4,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@mugtungshing/core)
 [![npm](https://img.shields.io/npm/v/@mugtungshing/core)](https://www.npmjs.com/package/@mugtungshing/core)
+[![codecov](https://codecov.io/gh/mugtungshing/core/branch/main/graph/badge.svg?token=V48jl8kASP)](https://codecov.io/gh/mugtungshing/core)
 
 「音游狗老黄历」生成器核心。
 
