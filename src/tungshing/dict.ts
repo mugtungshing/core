@@ -160,4 +160,4 @@ export interface IDict {
   daily: string[]
 }
 
-export { directions, slots, activities, daily } from './dict.json'
+export { default as dict } from './dict.json'

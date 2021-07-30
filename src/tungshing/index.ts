@@ -5,8 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 
-import * as dict from './dict'
-import { IDict } from './dict'
+import { dict, IDict } from './dict'
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
