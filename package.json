@@ -9,7 +9,7 @@
   },
   "types": "./dist/index.d.ts",
   "repository": "https://github.com/mugtungshing/core.git",
-  "author": "mochaaP <git@mochaa.ws>",
+  "author": "mochaaP <npm@mochaa.ws>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
