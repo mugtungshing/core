@@ -32,14 +32,14 @@
 
 ```html
 <script type="module">
-  import { tungshing } from "https://cdn.skypack.dev/@mugtungshing/core";
+  import { Tungshing } from 'https://cdn.skypack.dev/@mugtungshing/core'
 </script>
 ```
 
 ### 使用
 
 ```javascript
-tungshing(Math.random().toString(), new Date(), "Asia/Shanghai"); // 生成 GMT+8 的今日黄历
+new Tungshing(Math.random().toString(), new Date(), 'Asia/Shanghai') // 生成 GMT+8 的今日黄历
 ```
 
 **注意**：这并不是一个很好的范例，随机种子需要对每个用户独立唯一，且无法通过用户 ID 推出。
