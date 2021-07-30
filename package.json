@@ -7,7 +7,7 @@
     "require": "./dist/index.cjs.js",
     "import": "./dist/index.js"
   },
-  "types": "dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "repository": "https://github.com/mugtungshing/core.git",
   "author": "mochaaP <git@mochaa.ws>",
   "license": "MIT",
