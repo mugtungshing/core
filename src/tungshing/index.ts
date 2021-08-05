@@ -116,7 +116,7 @@ export class Tungshing implements ITungshing {
   ) {
     ow(seed, ow.string.minLength(5))
 
-    const day = dayjs(date).diff(dayjs('1970-01-01').tz(tz), 'day')
+    const day = dayjs(date).diff(dayjs.tz('1970-01-01', tz), 'day')
     const rng = random.clone(seedrandom(`${seed}$${day}`))
 
     const actions: number[] = []
