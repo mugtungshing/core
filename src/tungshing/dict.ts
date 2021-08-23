@@ -56,7 +56,7 @@
  * }
  * ```
  */
-export interface IDict {
+export interface Dict {
   /**
    * 移动端音游朝向
    * @example

@@ -72,11 +72,7 @@
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>param</dt>
-						<dd><p>伪随机数种子。需要大于 5 位字符。
-							<strong>需要对每个用户独立唯一，且无法通过用户 ID 推出。</strong></p>
-							<p>Telegram 示例:</p>
-							<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">seed</span><span style="color: #000000"> = </span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">$</span><span style="color: #0000FF">${</span><span style="color: #0070C1">BOT_TOKEN</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span>
-</code></pre>
+						<dd><p>黄历统一标识码。<a href="Identifier.html">Identifier</a></p>
 						</dd>
 						<dt>param</dt>
 						<dd><p>今日日期。</p>
@@ -85,27 +81,29 @@
 						<dd><p>用于计算每日开始时间的时区。</p>
 						</dd>
 						<dt>param</dt>
-						<dd><p>黄历字典。<a href="../interfaces/IDict.html">IDict</a></p>
+						<dd><p>黄历字典。<a href="../interfaces/Dict.html">Dict</a></p>
 						</dd>
 						<dt>returns</dt>
 						<dd><p>每日黄历的数据。</p>
 						</dd>
 						<dt>example</dt>
 						<dd><pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">date</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">()</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">result</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Tungshing</span><span style="color: #000000">(</span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">$</span><span style="color: #0000FF">${</span><span style="color: #0070C1">BOT_TOKEN</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">, </span><span style="color: #001080">date</span><span style="color: #000000">)</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">result</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Tungshing</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Identifier</span><span style="color: #000000">(</span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">$</span><span style="color: #0000FF">${</span><span style="color: #0070C1">BOT_TOKEN</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">), </span><span style="color: #001080">date</span><span style="color: #000000">)</span>
 <span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`</span>
 <span style="color: #A31515">今天是</span><span style="color: #0000FF">${</span><span style="color: #001080">date</span><span style="color: #000000FF">.</span><span style="color: #795E26">toLocaleDateString</span><span style="color: #000000FF">(</span><span style="color: #A31515">&#039;zh-CN&#039;</span><span style="color: #000000FF">, { </span><span style="color: #001080">dateStyle:</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;full&#039;</span><span style="color: #000000FF">, </span><span style="color: #001080">timeZone:</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;Asia/Shanghai&#039;</span><span style="color: #000000FF"> })</span><span style="color: #0000FF">}</span>
 <span style="color: #A31515">农历</span><span style="color: #0000FF">${</span><span style="color: #001080">date</span><span style="color: #000000FF">.</span><span style="color: #795E26">toLocaleDateString</span><span style="color: #000000FF">(</span><span style="color: #A31515">&#039;ja-JP-u-ca-chinese-nu-hanidec&#039;</span><span style="color: #000000FF">, { </span><span style="color: #001080">timeZone:</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;Asia/Shanghai&#039;</span><span style="color: #000000FF"> })</span><span style="color: #0000FF">}</span>
 
 
 <span style="color: #A31515">黄历姬掐指一算，您今天：</span>
-<span style="color: #A31515">宜</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">0</span><span style="color: #000000FF">].</span><span style="color: #001080">action</span><span style="color: #0000FF">}</span><span style="color: #A31515">：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">0</span><span style="color: #000000FF">].</span><span style="color: #001080">reason</span><span style="color: #0000FF">}</span>
-<span style="color: #A31515">忌</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">1</span><span style="color: #000000FF">].</span><span style="color: #001080">action</span><span style="color: #0000FF">}</span><span style="color: #A31515">：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">1</span><span style="color: #000000FF">].</span><span style="color: #001080">reason</span><span style="color: #0000FF">}</span>
+<span style="color: #A31515">宜 </span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">0</span><span style="color: #000000FF">].</span><span style="color: #001080">action</span><span style="color: #0000FF">}</span><span style="color: #A31515">：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">0</span><span style="color: #000000FF">].</span><span style="color: #001080">reason</span><span style="color: #0000FF">}</span>
+<span style="color: #A31515">忌 </span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">1</span><span style="color: #000000FF">].</span><span style="color: #001080">action</span><span style="color: #0000FF">}</span><span style="color: #A31515">：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">activity</span><span style="color: #000000FF">[</span><span style="color: #098658">1</span><span style="color: #000000FF">].</span><span style="color: #001080">reason</span><span style="color: #0000FF">}</span>
 
 <span style="color: #A31515">黄历姬为您推荐：</span>
 <span style="color: #A31515">今日音游：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">daily</span><span style="color: #0000FF">}</span>
 <span style="color: #A31515">打手机或平板音游最佳朝向：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">direction</span><span style="color: #0000FF">}</span>
 <span style="color: #A31515">街机音游黄金位：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">slot</span><span style="color: #0000FF">}</span>
+
+<span style="color: #A31515">黄历 ID：</span><span style="color: #0000FF">${</span><span style="color: #001080">result</span><span style="color: #000000FF">.</span><span style="color: #001080">identifier</span><span style="color: #000000FF">.</span><span style="color: #795E26">toString</span><span style="color: #000000FF">(</span><span style="color: #A31515">&#039;bagua&#039;</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span>
 <span style="color: #A31515">`</span><span style="color: #000000">)</span>
 </code></pre>
 						</dd>
@@ -118,12 +116,6 @@
 					<li>
 						<span class="target">Tungshing</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">ITungshing</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -142,6 +134,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Tungshing.html#activity" class="tsd-kind-icon">activity</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Tungshing.html#daily" class="tsd-kind-icon">daily</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Tungshing.html#direction" class="tsd-kind-icon">direction</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Tungshing.html#identifier" class="tsd-kind-icon">identifier</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Tungshing.html#slot" class="tsd-kind-icon">slot</a></li>
 							</ul>
 						</section>
@@ -154,19 +147,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Tungshing<span class="tsd-signature-symbol">(</span>seed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, date<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span>, tz<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, dic<span class="tsd-signature-symbol">?: </span><a href="../interfaces/IDict.html" class="tsd-signature-type" data-tsd-kind="Interface">IDict</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Tungshing.html" class="tsd-signature-type" data-tsd-kind="Class">Tungshing</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tungshing<span class="tsd-signature-symbol">(</span>identifier<span class="tsd-signature-symbol">: </span><a href="Identifier.html" class="tsd-signature-type" data-tsd-kind="Class">Identifier</a>, date<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span>, tz<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, dict<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>activities<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>daily<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>directions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>slots<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Tungshing.html" class="tsd-signature-type" data-tsd-kind="Class">Tungshing</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mugtungshing/core/blob/cb89d91/src/tungshing/index.ts#L111">tungshing/index.ts:111</a></li>
+									<li>Defined in tungshing/tungshing.ts:102</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>seed: <span class="tsd-signature-type">string</span></h5>
+									<h5>identifier: <a href="Identifier.html" class="tsd-signature-type" data-tsd-kind="Class">Identifier</a></h5>
 								</li>
 								<li>
 									<h5>date: <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> = ...</span></h5>
@@ -175,7 +168,21 @@
 									<h5>tz: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;Asia/Shanghai&#x27;</span></h5>
 								</li>
 								<li>
-									<h5>dic: <a href="../interfaces/IDict.html" class="tsd-signature-type" data-tsd-kind="Interface">IDict</a><span class="tsd-signature-symbol"> = ...</span></h5>
+									<h5>dict: <span class="tsd-signature-symbol">{ </span>activities<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>daily<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>directions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>slots<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>activities<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>daily<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>directions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>slots<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Tungshing.html" class="tsd-signature-type" data-tsd-kind="Class">Tungshing</a></h4>
@@ -187,47 +194,114 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="activity" class="tsd-anchor"></a>
-					<h3>activity</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> activity</h3>
 					<div class="tsd-signature tsd-kind-icon">activity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FixedLengthArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>reason<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of ITungshing.activity</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mugtungshing/core/blob/cb89d91/src/tungshing/index.ts#L108">tungshing/index.ts:108</a></li>
+							<li>Defined in tungshing/tungshing.ts:92</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>今日运势</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #000000">[</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">action:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;收歌&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">reason:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;又有资本可以炫耀了。&#039;</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">action:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;炫耀成绩&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">reason:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;容易被群友拉黑或报复。&#039;</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">]</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="daily" class="tsd-anchor"></a>
-					<h3>daily</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> daily</h3>
 					<div class="tsd-signature tsd-kind-icon">daily<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of ITungshing.daily</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mugtungshing/core/blob/cb89d91/src/tungshing/index.ts#L109">tungshing/index.ts:109</a></li>
+							<li>Defined in tungshing/tungshing.ts:101</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>今日音游</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #A31515">&#039;maimai&#039;</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="direction" class="tsd-anchor"></a>
-					<h3>direction</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> direction</h3>
 					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of ITungshing.direction</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mugtungshing/core/blob/cb89d91/src/tungshing/index.ts#L106">tungshing/index.ts:106</a></li>
+							<li>Defined in tungshing/tungshing.ts:61</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>移动端音游朝向</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #A31515">&#039;东&#039;</span>
+</code></pre>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #A31515">&#039;头朝下&#039;</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="identifier" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> identifier</h3>
+					<div class="tsd-signature tsd-kind-icon">identifier<span class="tsd-signature-symbol">:</span> <a href="Identifier.html" class="tsd-signature-type" data-tsd-kind="Class">Identifier</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tungshing/tungshing.ts:49</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="slot" class="tsd-anchor"></a>
-					<h3>slot</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> slot</h3>
 					<div class="tsd-signature tsd-kind-icon">slot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of ITungshing.slot</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mugtungshing/core/blob/cb89d91/src/tungshing/index.ts#L107">tungshing/index.ts:107</a></li>
+							<li>Defined in tungshing/tungshing.ts:74</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>街机音游黄金位</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #A31515">&#039;P1&#039;</span>
+</code></pre>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-ts"><span style="color: #A31515">&#039;维修位&#039;</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -241,6 +315,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="Identifier.html" class="tsd-kind-icon">Identifier</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
@@ -259,6 +336,9 @@
 								<a href="Tungshing.html#direction" class="tsd-kind-icon">direction</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="Tungshing.html#identifier" class="tsd-kind-icon">identifier</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="Tungshing.html#slot" class="tsd-kind-icon">slot</a>
 							</li>
 						</ul>
@@ -266,10 +346,7 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/IDict.html" class="tsd-kind-icon">IDict</a>
-					</li>
-					<li class=" tsd-kind-property">
-						<a href="../modules.html#dict" class="tsd-kind-icon">dict</a>
+						<a href="../interfaces/Dict.html" class="tsd-kind-icon">Dict</a>
 					</li>
 				</ul>
 			</nav>
@@ -283,6 +360,7 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>

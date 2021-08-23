@@ -1,7 +1,7 @@
-import { Tungshing, ITungshing } from '.'
-import { IDict } from './dict'
+import { Tungshing, Identifier } from '.'
+import { Dict } from './dict'
 
-const dict: IDict = { // 固定词典
+const dict: Dict = { // 固定词典
   directions: ['东', '东南', '南', '西南', '西', '西北', '北', '东北'],
   slots: ['P1', 'P2'],
   activities: [
@@ -60,48 +60,62 @@ const dict: IDict = { // 固定词典
   ]
 }
 
-test('固定种子随机发生器不变化', () => {
+test('固定种子结果不变化', () => {
+  const identifier = new Identifier('testseed')
   expect(new Tungshing(
-    'testseed',
+    identifier,
     new Date(0),
     'UTC',
     dict
   ))
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     .toEqual({
-      direction: '东南',
+      identifier,
+      direction: '北',
       slot: 'P1',
       activity: [
-        { action: '收歌', reason: '排行榜第一就在下一次！' },
-        { action: '复读', reason: '你的对手是鸽子。' }
+        { action: '收歌', reason: '手感爆棚，曲曲理论值。' },
+        { action: '肝爆', reason: '醒醒，限时活动没了。' }
       ],
-      daily: 'Arcaea'
-    } as ITungshing)
+      daily: 'Cytus II'
+    } as Tungshing)
 })
 
 test('时区判断正常', () => {
+  const identifier = new Identifier('testseed')
   expect(new Tungshing(
-    'testseed',
+    identifier,
     new Date(1_627_564_586_994),
     'Asia/Shanghai',
     dict
   ))
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     .toEqual({
-      direction: '北',
-      slot: 'P2',
+      identifier,
+      direction: '西北',
+      slot: 'P1',
       activity: [
-        { action: '炫耀成绩', reason: '获得万众敬仰，收割万人膝盖。' },
-        { action: '收歌', reason: '看见这个 note 了吗？你 接 不 住。' }
+        { action: '收歌', reason: '手感爆棚，曲曲理论值。' },
+        { action: '炫耀成绩', reason: '容易被群友拉黑或报复。' }
       ],
-      daily: 'Cytus II'
-    } as ITungshing)
+      daily: 'VOEZ'
+    } as Tungshing)
+})
+
+test('预设设定正常', () => {
+  const identifier = new Identifier('testseed')
+  expect(new Tungshing(
+    identifier
+  ))
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    .toBeInstanceOf(Tungshing)
 })
 
 test('能够抽取幸运小朋友', () => {
+  const identifier = new Identifier('06060f05-0c01-4800-820d-0207000b0d04')
   expect(function () {
     const x = new Tungshing(
-      '0.22714745301030104',
+      identifier,
       new Date(1_627_564_586_994),
       undefined,
       dict
@@ -109,10 +123,4 @@ test('能够抽取幸运小朋友', () => {
     return x.activity[0].action === x.activity[1].action
   }())
     .toBe(true)
-})
-
-test('种子小于 5 位字符时报错', () => {
-  expect(Tungshing).toThrow()
-  expect(() => { return new Tungshing('') }).toThrow()
-  expect(() => { return new Tungshing('seed') }).toThrow()
 })
