@@ -59,7 +59,6 @@ function uuidToBagua (id: UUID): BaguaId {
  * @param str - 已有 UUID / 黄历码 / 或从伪随机数种子生成一个统一标识码。
  * 当作为伪随机数种子时需要大于 5 位字符。
  * **需要对每个用户独立唯一，且无法通过用户 ID 推出。**
- *
  * Telegram 示例:
  * ```ts
  * new Identifier(`${id}$${BOT_TOKEN}`)
