@@ -1,4 +1,4 @@
-# 音游狗老黄历 Bot ![Core](https://img.shields.io/static/v1?label=&message=Core&color=blue&logo=typescript&logoColor=white)
+# 音游狗老黄历 Bot [![Core](https://img.shields.io/static/v1?label=&message=Core&color=blue&logo=typescript&logoColor=white)](https://github.com/mugtungshing/core)
 
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -32,14 +32,14 @@
 
 ```html
 <script type="module">
-  import { Tungshing } from 'https://cdn.skypack.dev/@mugtungshing/core'
+  import { Tungshing, Identifier } from 'https://cdn.skypack.dev/@mugtungshing/core'
 </script>
 ```
 
 ### 使用
 
 ```javascript
-new Tungshing(Math.random().toString(), new Date(), 'Asia/Shanghai') // 生成 GMT+8 的今日黄历
+new Tungshing(new Identifier(Math.random().toString()), new Date(), 'Asia/Shanghai') // 生成 GMT+8 的今日黄历
 ```
 
 **注意**：这并不是一个很好的范例，随机种子需要对每个用户独立唯一，且无法通过用户 ID 推出。

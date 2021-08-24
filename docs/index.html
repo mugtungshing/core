@@ -59,7 +59,7 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<a href="#音游狗老黄历-bot-" id="音游狗老黄历-bot-" style="color: inherit; text-decoration: none;">
-					<h1>音游狗老黄历 Bot <img src="https://img.shields.io/static/v1?label=&message=Core&color=blue&logo=typescript&logoColor=white" alt="Core"></h1>
+					<h1>音游狗老黄历 Bot <a href="https://github.com/mugtungshing/core"><img src="https://img.shields.io/static/v1?label=&message=Core&color=blue&logo=typescript&logoColor=white" alt="Core"></a></h1>
 				</a>
 				<p><a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT Licensed"></a>
 					<a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Style Guide"></a>
@@ -91,13 +91,13 @@
 					<h4>从 CDN 加载</h4>
 				</a>
 				<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">type</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;module&quot;</span><span style="color: #800000">&gt;</span>
-<span style="color: #000000FF">  </span><span style="color: #AF00DB">import</span><span style="color: #000000FF"> { </span><span style="color: #001080">Tungshing</span><span style="color: #000000FF"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;https://cdn.skypack.dev/@mugtungshing/core&#039;</span>
+<span style="color: #000000FF">  </span><span style="color: #AF00DB">import</span><span style="color: #000000FF"> { </span><span style="color: #001080">Tungshing</span><span style="color: #000000FF">, </span><span style="color: #001080">Identifier</span><span style="color: #000000FF"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;https://cdn.skypack.dev/@mugtungshing/core&#039;</span>
 <span style="color: #800000">&lt;/script&gt;</span>
 </code></pre>
 				<a href="#使用" id="使用" style="color: inherit; text-decoration: none;">
 					<h3>使用</h3>
 				</a>
-				<pre><code class="language-javascript"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Tungshing</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">().</span><span style="color: #795E26">toString</span><span style="color: #000000">(), </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(), </span><span style="color: #A31515">&#039;Asia/Shanghai&#039;</span><span style="color: #000000">) </span><span style="color: #008000">// 生成 GMT+8 的今日黄历</span>
+				<pre><code class="language-javascript"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Tungshing</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Identifier</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">().</span><span style="color: #795E26">toString</span><span style="color: #000000">()), </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(), </span><span style="color: #A31515">&#039;Asia/Shanghai&#039;</span><span style="color: #000000">) </span><span style="color: #008000">// 生成 GMT+8 的今日黄历</span>
 </code></pre>
 				<p><strong>注意</strong>：这并不是一个很好的范例，随机种子需要对每个用户独立唯一，且无法通过用户 ID 推出。</p>
 				<a href="#贡献" id="贡献" style="color: inherit; text-decoration: none;">
@@ -131,13 +131,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
+						<a href="classes/Identifier.html" class="tsd-kind-icon">Identifier</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/Tungshing.html" class="tsd-kind-icon">Tungshing</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/IDict.html" class="tsd-kind-icon">IDict</a>
-					</li>
-					<li class=" tsd-kind-property">
-						<a href="modules.html#dict" class="tsd-kind-icon">dict</a>
+						<a href="interfaces/Dict.html" class="tsd-kind-icon">Dict</a>
 					</li>
 				</ul>
 			</nav>
@@ -151,6 +151,7 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
