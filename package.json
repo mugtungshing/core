@@ -73,9 +73,10 @@
     ]
   },
   "scripts": {
-    "start": "yarn build --watch",
+    "start": "yarn build:watch",
     "start:node": "yarn build:node --watch",
     "build": "yarn clean && yarn build:esm && yarn build:node",
+    "build:watch": "yarn clean && yarn build:esm --watch & yarn build:node --watch",
     "build:esm": "tsc",
     "build:node": "esbuild --bundle src/index.ts --outfile=dist/index.cjs.js --platform=node --sourcemap",
     "lint": "eslint ./src --fix",
