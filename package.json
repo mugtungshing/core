@@ -38,7 +38,7 @@
     "husky": "7.0.4",
     "jest": "27.1.0",
     "lint-staged": "11.1.1",
-    "prettier": "2.5.1",
+    "prettier": "2.6.1",
     "rimraf": "3.0.2",
     "seedrandom": "3.0.5",
     "standard-version": "9.3.2",
