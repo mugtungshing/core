@@ -4457,10 +4457,10 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
-random@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/random/-/random-3.0.6.tgz#c918e9498dee461affde72986c79ac4d9ef486cf"
-  integrity sha512-B53pp/8eFBxULg6sfQgjjmy3vZ2CWVt0Nk4OgkSpvmAf3VXfcEUgGASbNWbXiTiExWe8hCIf5HlddNHzrte9jg==
+random@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/random/-/random-4.1.0.tgz#3e0fff0eea0d311e6a80fd2c91e72bb064dec363"
+  integrity sha512-6Ajb7XmMSE9EFAMGC3kg9mvE7fGlBip25mYYuSMzw/uUSrmGilvZo2qwX3RnTRjwXkwkS+4swse9otZ92VjAtQ==
   dependencies:
     seedrandom "^3.0.5"
 
