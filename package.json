@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "esbuild": "0.14.14",
     "eslint": "7.32.0",
-    "eslint-config-standard-with-typescript": "20.0.0",
+    "eslint-config-standard-with-typescript": "34.0.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "5.2.0",
