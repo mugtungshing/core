@@ -94,7 +94,7 @@
     "docs": "typedoc"
   },
   "jest": {
-    "preset": "ts-jest/presets/default-esm"
+    "preset": "ts-jest"
   },
   "husky": {
     "hooks": {
