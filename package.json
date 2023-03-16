@@ -50,7 +50,7 @@
   "dependencies": {
     "dayjs": "^1.10.7",
     "ow": "^0.28.0",
-    "random": "^3.0.6",
+    "random": "^4.0.0",
     "uuid": "^8.3.2"
   },
   "eslintConfig": {
